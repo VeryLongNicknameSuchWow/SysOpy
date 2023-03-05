@@ -1,0 +1,12 @@
+init 4
+count ../zad1/wclib.c
+count ../zad1/wclib.h
+count ../zad2/wc_repl.c
+count ../zad2/wc_repl_dynamic.c
+show 0
+show 1
+show 2
+show 3
+delete 0 1
+delete 2 3
+destroy

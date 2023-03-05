@@ -1,0 +1,109 @@
+Podwójne pomiary dla biblioteki statycznej
+
+1. Stworzenie tablicy
+Elapsed real time: 0 seconds, 39 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 37 microseconds
+
+Elapsed real time: 0 seconds, 15 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 14 microseconds
+
+2. Policzenie dla wclib.c
+Elapsed real time: 0 seconds, 3816 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 269 microseconds
+
+Elapsed real time: 0 seconds, 1480 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 75 microseconds
+
+3. Policzenie dla wclib.h
+Elapsed real time: 0 seconds, 4098 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 229 microseconds
+
+Elapsed real time: 0 seconds, 2114 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 69 microseconds
+
+4. Policzenie dla wc_repl.c
+Elapsed real time: 0 seconds, 3945 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 207 microseconds
+
+Elapsed real time: 0 seconds, 1446 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 66 microseconds
+
+5. Policzenie dla wc_repl_dynamic.c
+Elapsed real time: 0 seconds, 3769 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 286 microseconds
+
+Elapsed real time: 0 seconds, 3225 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 67 microseconds
+
+6. Wypisanie dla indeksu 0
+Elapsed real time: 0 seconds, 15 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 16 microseconds
+
+Elapsed real time: 0 seconds, 6 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 6 microseconds
+
+7. Wypisanie dla indeksu 1
+Elapsed real time: 0 seconds, 7 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 8 microseconds
+
+Elapsed real time: 0 seconds, 4 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 4 microseconds
+
+8. Wypisanie dla indeksu 2
+Elapsed real time: 0 seconds, 8 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 8 microseconds
+
+Elapsed real time: 0 seconds, 5 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 5 microseconds
+
+9. Wypisanie dla indeksu 3
+Elapsed real time: 0 seconds, 8 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 8 microseconds
+
+Elapsed real time: 0 seconds, 6 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 5 microseconds
+
+10. Usunięcie indeksów 0 oraz 1
+Elapsed real time: 0 seconds, 15 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 15 microseconds
+
+Elapsed real time: 0 seconds, 6 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 5 microseconds
+
+11. Usunięcie indeksów 2 oraz 3
+Elapsed real time: 0 seconds, 6 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 6 microseconds
+
+Elapsed real time: 0 seconds, 4 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 4 microseconds
+
+12. Usunięcie tablicy
+Elapsed real time: 0 seconds, 8 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 8 microseconds
+
+Elapsed real time: 0 seconds, 4 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 3 microseconds
