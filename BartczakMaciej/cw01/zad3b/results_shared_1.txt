@@ -1,27 +1,27 @@
-Elapsed real time: 0 seconds, 10 microseconds
+Elapsed real time: 0 seconds, 14 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 10 microseconds
+System CPU time: 0 seconds, 12 microseconds
 
-Elapsed real time: 0 seconds, 2165 microseconds
+Elapsed real time: 0 seconds, 2175 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 168 microseconds
+System CPU time: 0 seconds, 142 microseconds
 
-Elapsed real time: 0 seconds, 1997 microseconds
+Elapsed real time: 0 seconds, 1496 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 156 microseconds
+System CPU time: 0 seconds, 145 microseconds
 
-Elapsed real time: 0 seconds, 1897 microseconds
+Elapsed real time: 0 seconds, 2042 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 139 microseconds
+System CPU time: 0 seconds, 110 microseconds
 
-Elapsed real time: 0 seconds, 2375 microseconds
+Elapsed real time: 0 seconds, 1983 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 123 microseconds
+System CPU time: 0 seconds, 87 microseconds
 
 Contents of container at index 0:
   75  163 1709 ../zad1/wclib.c
 
-Elapsed real time: 0 seconds, 5 microseconds
+Elapsed real time: 0 seconds, 4 microseconds
 User CPU time: 0 seconds, 0 microseconds
 System CPU time: 0 seconds, 4 microseconds
 
@@ -30,14 +30,14 @@ Contents of container at index 1:
 
 Elapsed real time: 0 seconds, 2 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 3 microseconds
+System CPU time: 0 seconds, 2 microseconds
 
 Contents of container at index 2:
   64  224 2450 ../zad2/wc_repl.c
 
-Elapsed real time: 0 seconds, 3 microseconds
+Elapsed real time: 0 seconds, 2 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 3 microseconds
+System CPU time: 0 seconds, 2 microseconds
 
 Contents of container at index 3:
  100  317 3430 ../zad2/wc_repl_dynamic.c
@@ -46,23 +46,23 @@ Elapsed real time: 0 seconds, 2 microseconds
 User CPU time: 0 seconds, 0 microseconds
 System CPU time: 0 seconds, 2 microseconds
 
-Elapsed real time: 0 seconds, 5 microseconds
-User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 5 microseconds
-
 Elapsed real time: 0 seconds, 3 microseconds
 User CPU time: 0 seconds, 0 microseconds
 System CPU time: 0 seconds, 3 microseconds
 
-Elapsed real time: 0 seconds, 3 microseconds
+Elapsed real time: 0 seconds, 2 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 1 microseconds
+
+Elapsed real time: 0 seconds, 1 microseconds
 User CPU time: 0 seconds, 0 microseconds
 System CPU time: 0 seconds, 2 microseconds
 
-Elapsed real time: 0 seconds, 3 microseconds
+Elapsed real time: 0 seconds, 2 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 2 microseconds
+System CPU time: 0 seconds, 1 microseconds
 
-Elapsed real time: 0 seconds, 3 microseconds
+Elapsed real time: 0 seconds, 2 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 3 microseconds
+System CPU time: 0 seconds, 1 microseconds
 

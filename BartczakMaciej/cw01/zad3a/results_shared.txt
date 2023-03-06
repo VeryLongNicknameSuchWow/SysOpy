@@ -1,109 +1,68 @@
-Podwójne pomiary dla biblioteki dzielonej
-
-1. Stworzenie tablicy
-Elapsed real time: 0 seconds, 29 microseconds
-User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 28 microseconds
-
-Elapsed real time: 0 seconds, 36 microseconds
-User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 34 microseconds
-
-2. Policzenie dla wclib.c
-Elapsed real time: 0 seconds, 2331 microseconds
-User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 130 microseconds
-
-Elapsed real time: 0 seconds, 3077 microseconds
-User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 177 microseconds
-
-3. Policzenie dla wclib.h
-Elapsed real time: 0 seconds, 2830 microseconds
-User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 114 microseconds
-
-Elapsed real time: 0 seconds, 2569 microseconds
-User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 188 microseconds
-
-4. Policzenie dla wc_repl.c
-Elapsed real time: 0 seconds, 3832 microseconds
-User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 192 microseconds
-
-Elapsed real time: 0 seconds, 2888 microseconds
-User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 158 microseconds
-
-5. Policzenie dla wc_repl_dynamic.c
-Elapsed real time: 0 seconds, 2305 microseconds
-User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 199 microseconds
-
-Elapsed real time: 0 seconds, 2830 microseconds
-User CPU time: 0 seconds, 147 microseconds
-System CPU time: 0 seconds, 0 microseconds
-
-6. Wypisanie dla indeksu 0
-Elapsed real time: 0 seconds, 15 microseconds
+Elapsed real time: 0 seconds, 17 microseconds
 User CPU time: 0 seconds, 0 microseconds
 System CPU time: 0 seconds, 15 microseconds
 
-Elapsed real time: 0 seconds, 10 microseconds
-User CPU time: 0 seconds, 10 microseconds
-System CPU time: 0 seconds, 0 microseconds
-
-7. Wypisanie dla indeksu 1
-Elapsed real time: 0 seconds, 14 microseconds
+Elapsed real time: 0 seconds, 2339 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 14 microseconds
+System CPU time: 0 seconds, 117 microseconds
 
-Elapsed real time: 0 seconds, 7 microseconds
-User CPU time: 0 seconds, 7 microseconds
-System CPU time: 0 seconds, 0 microseconds
-
-8. Wypisanie dla indeksu 2
-Elapsed real time: 0 seconds, 9 microseconds
+Elapsed real time: 0 seconds, 3507 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 9 microseconds
+System CPU time: 0 seconds, 107 microseconds
 
-Elapsed real time: 0 seconds, 10 microseconds
-User CPU time: 0 seconds, 10 microseconds
-System CPU time: 0 seconds, 0 microseconds
-
-9. Wypisanie dla indeksu 3
-Elapsed real time: 0 seconds, 10 microseconds
+Elapsed real time: 0 seconds, 1477 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 9 microseconds
+System CPU time: 0 seconds, 79 microseconds
 
-Elapsed real time: 0 seconds, 7 microseconds
-User CPU time: 0 seconds, 7 microseconds
-System CPU time: 0 seconds, 0 microseconds
-
-10. Usunięcie indeksów 0 oraz 1
-Elapsed real time: 0 seconds, 10 microseconds
+Elapsed real time: 0 seconds, 2224 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 11 microseconds
+System CPU time: 0 seconds, 65 microseconds
 
-Elapsed real time: 0 seconds, 8 microseconds
-User CPU time: 0 seconds, 8 microseconds
-System CPU time: 0 seconds, 0 microseconds
+Contents of container at index 0:
+  75  163 1709 ../zad1/wclib.c
 
-11. Usunięcie indeksów 2 oraz 3
 Elapsed real time: 0 seconds, 5 microseconds
 User CPU time: 0 seconds, 0 microseconds
 System CPU time: 0 seconds, 5 microseconds
 
-Elapsed real time: 0 seconds, 4 microseconds
-User CPU time: 0 seconds, 4 microseconds
-System CPU time: 0 seconds, 0 microseconds
+Contents of container at index 1:
+ 32  58 616 ../zad1/wclib.h
 
-12. Usunięcie tablicy
-Elapsed real time: 0 seconds, 8 microseconds
+Elapsed real time: 0 seconds, 2 microseconds
 User CPU time: 0 seconds, 0 microseconds
-System CPU time: 0 seconds, 8 microseconds
+System CPU time: 0 seconds, 2 microseconds
 
-Elapsed real time: 0 seconds, 7 microseconds
-User CPU time: 0 seconds, 7 microseconds
-System CPU time: 0 seconds, 0 microseconds
+Contents of container at index 2:
+  64  224 2450 ../zad2/wc_repl.c
+
+Elapsed real time: 0 seconds, 2 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 2 microseconds
+
+Contents of container at index 3:
+ 100  317 3430 ../zad2/wc_repl_dynamic.c
+
+Elapsed real time: 0 seconds, 2 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 2 microseconds
+
+Elapsed real time: 0 seconds, 3 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 3 microseconds
+
+Elapsed real time: 0 seconds, 2 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 1 microseconds
+
+Elapsed real time: 0 seconds, 1 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 2 microseconds
+
+Elapsed real time: 0 seconds, 2 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 1 microseconds
+
+Elapsed real time: 0 seconds, 1 microseconds
+User CPU time: 0 seconds, 0 microseconds
+System CPU time: 0 seconds, 2 microseconds
+

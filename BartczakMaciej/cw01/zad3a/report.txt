@@ -1,3 +1,0 @@
-Wszystkie pomiary mieszczą się w podobnych przedziałach. Różnice między różnymi typami bibliotek są podobnego rzędu,
-co te między kolejnymi dwoma pomiarami dla tego samego typu biblioteki. Uniemożliwia to wytypowanie najbardziej
-"wydajnego" typu dołączania biblioteki.
