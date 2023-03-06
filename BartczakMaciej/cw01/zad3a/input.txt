@@ -7,6 +7,8 @@ show 0
 show 1
 show 2
 show 3
-delete 0 1
-delete 2 3
+delete index 0
+delete index 1
+delete index 2
+delete index 3
 destroy
