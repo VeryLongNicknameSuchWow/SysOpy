@@ -1,0 +1,2 @@
+Optymalizacja przyniosła widocznie lepsze rezultaty tylko dla bibliotki dynamicznej.
+W przypadku dzielonej oraz statycznej ich czasy wykonania oraz ich wariancja są na podobnym poziomie niezależnie od optymalizacji.

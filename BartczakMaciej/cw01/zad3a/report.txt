@@ -1,0 +1,7 @@
+W przypadku biblioteki współdzielonej najdłuższy czas działania wynosił 3,5 ms, a najkrótszy 17 mikrosekund.
+Dla biblioteki statycznej najdłuższy czas działania wynosił 1,6 ms, a najkrótszy 8 mikrosekund.
+Dla biblioteki dynamicznej najdłuższy czas działania wynosił 2,4 ms, a najkrótszy 10 mikrosekund.
+
+Zestawienie pokazuje, że korzystanie z bibliotek statycznych może być najbardziej wydajne,
+gdyż mają one najkrótszy czas działania w porównaniu z bibliotekami współdzielonymi i dynamicznymi.
+Różnice te są jednak bardzo małe.
