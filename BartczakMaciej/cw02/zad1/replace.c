@@ -169,7 +169,7 @@ int main(int argc, char *argv[]) {
 
     if (!success) {
         fprintf(stderr, "Error number: %d\n", errno);
-        return 1;
+        return EXIT_FAILURE;
     }
 
     struct timeval endTime;
@@ -179,5 +179,5 @@ int main(int argc, char *argv[]) {
            version,
            endTime.tv_sec - startTime.tv_sec,
            endTime.tv_usec - startTime.tv_usec);
-    return 0;
+    return EXIT_SUCCESS;
 }
