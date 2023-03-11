@@ -5,10 +5,10 @@ TEST_COUNT=10
 
 all: std sys
 
-std: replace.c replace.h
+std: replace.c
 	$(CC) $(CFLAGS) replace.c -o replace_std
 
-sys: replace.c replace.h
+sys: replace.c
 	$(CC) $(CFLAGS) replace.c -o replace_sys -D SYS
 
 test: all

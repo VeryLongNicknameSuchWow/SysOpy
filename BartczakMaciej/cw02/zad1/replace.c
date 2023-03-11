@@ -1,25 +1,48 @@
-//
-// Created by rynbou on 3/11/23.
-//
-
-#include "replace.h"
 #include <stdio.h>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <stdbool.h>
+#include <errno.h>
+#include <stdlib.h>
 
-int replace(const char *sourcePath, const char *destinationPath, const char toReplace, const char replaceWith) {
-#ifndef SYS
-    FILE *file = fopen(sourcePath, "r");
+int replace_lib(const char *sourcePath, const char *destinationPath, const char toReplace, const char replaceWith) {
+    char *buffer = NULL;
+    FILE *file = NULL;
 
-    fseek(file, 0, SEEK_END);
+    file = fopen(sourcePath, "r");
+    if (file == NULL) {
+        fprintf(stderr, "An error occurred while opening input file\n");
+        goto error;
+    }
+
+    if (fseek(file, 0, SEEK_END)) {
+        fprintf(stderr, "An error occurred while processing input file\n");
+        goto error;
+    }
     long srcSize = ftell(file);
-    fseek(file, 0, SEEK_SET);
+    if (fseek(file, 0, SEEK_SET)) {
+        fprintf(stderr, "An error occurred while processing input file\n");
+        goto error;
+    }
 
-    char buffer[srcSize];
+    buffer = calloc(srcSize, sizeof(char));
+    if (buffer == NULL) {
+        fprintf(stderr, "An error occurred during dynamic memory allocation\n");
+        goto error;
+    }
+
     fread(buffer, sizeof(char), srcSize, file);
-    fclose(file);
+    if (ferror(file)) {
+        fprintf(stderr, "An error occurred while reading input file\n");
+        goto error;
+    }
+
+    if (fclose(file)) {
+        fprintf(stderr, "An error occurred while closing input file\n");
+        goto error;
+    }
 
     for (int i = 0; i < srcSize; ++i) {
         if (buffer[i] == toReplace) {
@@ -28,18 +51,66 @@ int replace(const char *sourcePath, const char *destinationPath, const char toRe
     }
 
     file = fopen(destinationPath, "w");
+    if (file == NULL) {
+        fprintf(stderr, "An error occurred while opening output file\n");
+        goto error;
+    }
+
     fwrite(buffer, sizeof(char), srcSize, file);
-    fclose(file);
-#else
-    int file = open(sourcePath, O_RDONLY);
+    if (ferror(file)) {
+        fprintf(stderr, "An error occurred while writing to output file\n");
+        goto error;
+    }
+
+    if (fclose(file)) {
+        fprintf(stderr, "An error occurred while closing output file\n");
+        goto error;
+    }
+
+    free(buffer);
+    return true;
+
+    error:
+    if (buffer != NULL) {
+        free(buffer);
+    }
+    if (file != NULL) {
+        fclose(file);
+    }
+    return false;
+}
+
+int replace_sys(const char *sourcePath, const char *destinationPath, const char toReplace, const char replaceWith) {
+    char *buffer = NULL;
+    int file = -1;
+
+    file = open(sourcePath, O_RDONLY);
+    if (file == -1) {
+        fprintf(stderr, "An error occurred while opening input file\n");
+        goto error;
+    }
 
     struct stat st;
-    fstat(file, &st);
-    unsigned long srcSize = st.st_size;
+    if (fstat(file, &st) == -1) {
+        fprintf(stderr, "An error occurred while processing input file\n");
+        goto error;
+    }
 
-    char buffer[srcSize];
-    read(file, buffer, sizeof(char) * srcSize);
-    close(file);
+    unsigned long srcSize = st.st_size;
+    buffer = calloc(srcSize, sizeof(char));
+    if (buffer == NULL) {
+        fprintf(stderr, "An error occurred during dynamic memory allocation\n");
+        goto error;
+    }
+
+    if (read(file, buffer, sizeof(char) * srcSize) == -1) {
+        fprintf(stderr, "An error occurred while reading input file\n");
+        goto error;
+    }
+    if (close(file) == -1) {
+        fprintf(stderr, "An error occurred while closing input file\n");
+        goto error;
+    }
 
     for (int i = 0; i < srcSize; ++i) {
         if (buffer[i] == toReplace) {
@@ -48,11 +119,30 @@ int replace(const char *sourcePath, const char *destinationPath, const char toRe
     }
 
     file = open(destinationPath, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
-    write(file, buffer, sizeof(char) * srcSize);
-    close(file);
-#endif
+    if (file == -1) {
+        fprintf(stderr, "An error occurred while opening output file\n");
+        goto error;
+    }
 
-    return 0;
+    if (write(file, buffer, sizeof(char) * srcSize) == -1) {
+        fprintf(stderr, "An error occurred while writing to output file\n");
+        goto error;
+    }
+    if (close(file) == -1) {
+        fprintf(stderr, "An error occurred while closing output file\n");
+        goto error;
+    }
+
+    return true;
+
+    error:
+    if (buffer != NULL) {
+        free(buffer);
+    }
+    if (file != -1) {
+        close(file);
+    }
+    return false;
 }
 
 int main(int argc, char *argv[]) {
@@ -68,16 +158,22 @@ int main(int argc, char *argv[]) {
     struct timeval startTime;
     gettimeofday(&startTime, NULL);
 
-    replace(sourcePath, destinationPath, toReplace, replaceWith);
-
-    struct timeval endTime;
-    gettimeofday(&endTime, NULL);
 
 #ifdef SYS
     char *version = "SYS";
+    int success = replace_sys(sourcePath, destinationPath, toReplace, replaceWith);
 #else
     char *version = "LIB";
+    int success = replace_lib(sourcePath, destinationPath, toReplace, replaceWith);
 #endif
+
+    if (!success) {
+        fprintf(stderr, "Error number: %d\n", errno);
+        return 1;
+    }
+
+    struct timeval endTime;
+    gettimeofday(&endTime, NULL);
 
     printf("%s version, elapsed real time: %ld seconds, %ld microseconds\n",
            version,

@@ -1,2 +1,2 @@
-SYS version, elapsed real time: 0 seconds, 32394 microseconds
-LIB version, elapsed real time: 0 seconds, 36615 microseconds
+SYS version, elapsed real time: 0 seconds, 22521 microseconds
+LIB version, elapsed real time: 0 seconds, 36242 microseconds
