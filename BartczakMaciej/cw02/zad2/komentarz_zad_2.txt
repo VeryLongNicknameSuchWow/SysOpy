@@ -1,0 +1,7 @@
+W kwestii porównania z poleceniem tac ... | rev:
+Pliki zwracane przez mój program nie są zgodne z tymi zwracanymi przez powyższą komendę.
+tac | rev najpierw czyta plik linijka po linijce a następnie odwraca każdą linijkę.
+Mój program, zgodnie z poleceniem, odwraca bloki znaków - rezultaty nie są zawsze zgodne.
+W standardzie UNIX plik tekstowy powinien zawierać znak nowej linii na końcu.
+Komenda tac | rev "przesuwa" ten końcowy znak z początku odwróconego pliku na jego koniec aby zachować kompatybilność
+ze standardem UNIXowym. Mój program tego nie robi, co powoduje różnice w plikach.

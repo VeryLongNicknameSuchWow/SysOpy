@@ -1,0 +1,2 @@
+Istnieją drobne różnice w formatowaniu danych między moim programem a komendą wc.
+Wyjście mojego programu nie jest "wyjustowane" oraz posortowane alfabetycznie, dane są jednak spójne.
