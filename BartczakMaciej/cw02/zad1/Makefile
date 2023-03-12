@@ -1,7 +1,6 @@
 CC=gcc
 CFLAGS=-Wall
 TEST_SIZE=4M
-TEST_COUNT=10
 
 all: std sys
 
