@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <errno.h>
 #include <sys/time.h>
 
@@ -102,8 +101,7 @@ int reverse(char *sourcePath, char *destinationPath) {
         fprintf(stderr, "An error occurred while closing source file\n");
         goto error;
     }
-
-    return true;
+    return EXIT_SUCCESS;
 
     error:
     if (src != NULL) {
@@ -112,7 +110,7 @@ int reverse(char *sourcePath, char *destinationPath) {
     if (dest != NULL) {
         fclose(dest);
     }
-    return false;
+    return EXIT_FAILURE;
 }
 
 int main(int argc, char *argv[]) {
@@ -126,8 +124,8 @@ int main(int argc, char *argv[]) {
     struct timeval startTime;
     gettimeofday(&startTime, NULL);
 
-    int success = reverse(sourcePath, destinationPath);
-    if (!success) {
+    int failure = reverse(sourcePath, destinationPath);
+    if (failure) {
         fprintf(stderr, "Error number: %d\n", errno);
         return EXIT_FAILURE;
     }

@@ -3,7 +3,6 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <sys/time.h>
-#include <stdbool.h>
 #include <errno.h>
 #include <stdlib.h>
 
@@ -68,7 +67,7 @@ int replace_lib(const char *sourcePath, const char *destinationPath, const char 
     }
 
     free(buffer);
-    return true;
+    return EXIT_SUCCESS;
 
     error:
     if (buffer != NULL) {
@@ -77,7 +76,7 @@ int replace_lib(const char *sourcePath, const char *destinationPath, const char 
     if (file != NULL) {
         fclose(file);
     }
-    return false;
+    return EXIT_FAILURE;
 }
 
 int replace_sys(const char *sourcePath, const char *destinationPath, const char toReplace, const char replaceWith) {
@@ -132,8 +131,7 @@ int replace_sys(const char *sourcePath, const char *destinationPath, const char 
         fprintf(stderr, "An error occurred while closing output file\n");
         goto error;
     }
-
-    return true;
+    return EXIT_SUCCESS;
 
     error:
     if (buffer != NULL) {
@@ -142,7 +140,7 @@ int replace_sys(const char *sourcePath, const char *destinationPath, const char 
     if (file != -1) {
         close(file);
     }
-    return false;
+    return EXIT_FAILURE;
 }
 
 int main(int argc, char *argv[]) {
@@ -161,13 +159,13 @@ int main(int argc, char *argv[]) {
 
 #ifdef SYS
     char *version = "SYS";
-    int success = replace_sys(sourcePath, destinationPath, toReplace, replaceWith);
+    int failure = replace_sys(sourcePath, destinationPath, toReplace, replaceWith);
 #else
     char *version = "LIB";
-    int success = replace_lib(sourcePath, destinationPath, toReplace, replaceWith);
+    int failure = replace_lib(sourcePath, destinationPath, toReplace, replaceWith);
 #endif
 
-    if (!success) {
+    if (failure) {
         fprintf(stderr, "Error number: %d\n", errno);
         return EXIT_FAILURE;
     }
