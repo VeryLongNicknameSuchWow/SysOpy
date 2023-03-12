@@ -25,36 +25,94 @@ char *reverseString(char *str) {
 
 int reverse(char *sourcePath, char *destinationPath) {
     char buffer[BLOCK_SIZE + 1];
+    FILE *src = NULL;
+    FILE *dest = NULL;
 
-    FILE *src = fopen(sourcePath, "r");
-    FILE *dest = fopen(destinationPath, "w");
+    src = fopen(sourcePath, "r");
+    if (src == NULL) {
+        fprintf(stderr, "An error occurred while opening source file\n");
+        goto error;
+    }
 
-    fseek(src, 0, SEEK_END);
+    dest = fopen(destinationPath, "w");
+    if (dest == NULL) {
+        fprintf(stderr, "An error occurred while opening destination file\n");
+        goto error;
+    }
+
+    if (fseek(src, 0, SEEK_END)) {
+        fprintf(stderr, "An error occurred while processing source file\n");
+        goto error;
+    }
     long srcSize = ftell(src);
-    fseek(src, 0, SEEK_SET);
+    if (fseek(src, 0, SEEK_SET)) {
+        fprintf(stderr, "An error occurred while processing source file\n");
+        goto error;
+    }
 
     size_t fullBlocks = (size_t) (srcSize / BLOCK_SIZE);
-    size_t remainder = (size_t) (srcSize % BLOCK_SIZE);
+    size_t lastBlock = (size_t) (srcSize % BLOCK_SIZE);
 
     size_t blocksRead;
 
     for (int i = 1; i <= fullBlocks; ++i) {
-        fseek(src, -1 * (BLOCK_SIZE * i), SEEK_END);
+        if (fseek(src, -1 * (BLOCK_SIZE * i), SEEK_END)) {
+            fprintf(stderr, "An error occurred while processing source file\n");
+            goto error;
+        }
         blocksRead = fread(buffer, sizeof(char), BLOCK_SIZE, src);
+        if (ferror(src)) {
+            fprintf(stderr, "An error occurred while reading source file\n");
+            goto error;
+        }
         buffer[blocksRead] = '\0';
         fwrite(reverseString(buffer), sizeof(char), blocksRead, dest);
+        if (ferror(dest)) {
+            fprintf(stderr, "An error occurred while writing to destination file\n");
+            goto error;
+        }
     }
 
-    fseek(src, 0, SEEK_SET);
-    blocksRead = fread(buffer, sizeof(char), remainder, src);
+    if (fseek(src, 0, SEEK_SET)) {
+        fprintf(stderr, "An error occurred while processing source file\n");
+        goto error;
+    }
+    blocksRead = fread(buffer, sizeof(char), lastBlock, src);
+    if (ferror(src)) {
+        fprintf(stderr, "An error occurred while reading source file\n");
+        goto error;
+    }
     buffer[blocksRead] = '\0';
     fwrite(reverseString(buffer), sizeof(char), blocksRead, dest);
+    if (ferror(dest)) {
+        fprintf(stderr, "An error occurred while writing to destination file\n");
+        goto error;
+    }
     fwrite("\n", sizeof(char), 1, dest);
+    if (ferror(dest)) {
+        fprintf(stderr, "An error occurred while writing to destination file\n");
+        goto error;
+    }
 
-    fclose(src);
-    fclose(dest);
+    if (fclose(src)) {
+        fprintf(stderr, "An error occurred while closing source file\n");
+        goto error;
+    }
+    if (fclose(dest)) {
+        fprintf(stderr, "An error occurred while closing source file\n");
+        goto error;
+    }
 
     return true;
+
+    error:
+    if (src != NULL) {
+        fclose(src);
+    }
+    if (dest != NULL) {
+        fclose(dest);
+    }
+    return false;
 }
 
 int main(int argc, char *argv[]) {
