@@ -135,10 +135,13 @@ int main(int argc, char *argv[]) {
     struct timeval endTime;
     gettimeofday(&endTime, NULL);
 
+    struct timeval elapsedTime;
+    timersub(&endTime, &startTime, &elapsedTime);
+
     printf("BLOCK_SIZE=%d, elapsed real time: %ld seconds, %ld microseconds\n",
            BLOCK_SIZE,
-           endTime.tv_sec - startTime.tv_sec,
-           endTime.tv_usec - startTime.tv_usec);
+           elapsedTime.tv_sec,
+           elapsedTime.tv_usec);
 
     return EXIT_SUCCESS;
 }
