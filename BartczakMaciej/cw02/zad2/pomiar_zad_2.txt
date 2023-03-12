@@ -1,0 +1,2 @@
+BLOCK_SIZE=1, elapsed real time: 0 seconds, 631844 microseconds
+BLOCK_SIZE=1024, elapsed real time: 0 seconds, 12419 microseconds
