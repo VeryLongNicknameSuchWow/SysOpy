@@ -9,16 +9,14 @@
 #endif
 
 char *reverseString(char *str) {
-    unsigned long len = strlen(str);
-    char *copy = calloc(len + 1, sizeof(char));
+    size_t len = strlen(str);
+    char copy[len + 1];
     strcpy(copy, str);
 
-    for (int i = 0; i < len; ++i) {
-        char c = copy[len - i - 1];
-        str[i] = c;
+    for (size_t i = 0; i < len; ++i) {
+        str[i] = copy[len - i - 1];
     }
 
-    free(copy);
     return str;
 }
 
