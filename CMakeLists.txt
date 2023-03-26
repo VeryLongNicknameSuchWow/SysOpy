@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.24)
+project(sysopy C)
+
+set(CMAKE_C_STANDARD 17)
+
+add_executable(cw01_zad1 BartczakMaciej/cw01/zad1/wclib.c)
+add_executable(cw01_zad2 BartczakMaciej/cw01/zad2/wc_repl.c BartczakMaciej/cw01/zad2/wc_repl_dynamic.c)
+add_executable(cw02_zad1 BartczakMaciej/cw02/zad1/replace.c)
+add_executable(cw02_zad2 BartczakMaciej/cw02/zad2/reverse.c)
+add_executable(cw02_zad3 BartczakMaciej/cw02/zad3/dudir.c)
+add_executable(cw02_zad4 BartczakMaciej/cw02/zad4/dudir_r.c)
+add_executable(cw03_zad1 BartczakMaciej/cw03/zad1/fork.c)
+add_executable(cw03_zad2 BartczakMaciej/cw03/zad2/ls.c)
+add_executable(cw03_zad3 BartczakMaciej/cw03/zad3/tree.c)
+add_executable(cw04_zad1 BartczakMaciej/cw04/zad1/signal.c)
+add_executable(cw04_zad2 BartczakMaciej/cw04/zad2/sigaction.c)
