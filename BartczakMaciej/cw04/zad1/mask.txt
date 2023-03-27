@@ -1,0 +1,14 @@
+PID 9261:	is the main process
+PID 9261:	enabling handler
+PID 9261:	enabling mask
+PID 9261:	raising signal
+PID 9261:	signal is pending
+PID 9262:	is a child process		(fork)
+PID 9262:	raising signal
+PID 9262:	signal is pending
+PID 9262:	exiting successfully	(fork)
+PID 9261:	exiting successfully	(replaced with exec)
+PID 9261:	is a child process		(exec)
+PID 9261:	raising signal
+PID 9261:	signal is pending
+PID 9261:	exiting successfully	(exec)

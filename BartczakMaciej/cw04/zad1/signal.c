@@ -87,11 +87,11 @@ void handlerTask() {
             fflush(stdout);
             raiseSignal();
         } else {
-//            wait(NULL);
-//            execChild();
+            wait(NULL);
+            execChild();
         }
     } else {
-//        raiseSignal();
+        raiseSignal();
     }
 }
 

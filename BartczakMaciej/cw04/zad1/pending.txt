@@ -1,0 +1,12 @@
+PID 9264:	is the main process
+PID 9264:	enabling handler
+PID 9264:	enabling mask
+PID 9264:	raising signal
+PID 9264:	signal is pending
+PID 9265:	is a child process		(fork)
+PID 9265:	signal is not pending
+PID 9265:	exiting successfully	(fork)
+PID 9264:	exiting successfully	(replaced with exec)
+PID 9264:	is a child process		(exec)
+PID 9264:	signal is pending
+PID 9264:	exiting successfully	(exec)

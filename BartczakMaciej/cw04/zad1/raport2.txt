@@ -1,0 +1,4 @@
+Dziedziczenie ignorowania sygnału następuje zarówno w przypadku fork jak i exec.
+Handler jest dziedziczony tylko po fork, dla exec następuje zakończenie programu.
+Maska jest dziedziczona przez fork oraz exec.
+Sygnały oczekujące można odczytać w procesie po exec, po fork nie.

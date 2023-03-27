@@ -1,0 +1,11 @@
+PID 9258:	is the main process
+PID 9258:	enabling handler
+PID 9258:	raising signal
+PID 9258:	handling signal
+PID 9259:	is a child process		(fork)
+PID 9259:	raising signal
+PID 9259:	handling signal
+PID 9259:	exiting successfully	(fork)
+PID 9258:	exiting successfully	(replaced with exec)
+PID 9258:	is a child process		(exec)
+PID 9258:	raising signal

@@ -1,0 +1,10 @@
+PID 9255:	is the main process
+PID 9255:	enabling ignore
+PID 9255:	raising signal
+PID 9256:	is a child process		(fork)
+PID 9256:	raising signal
+PID 9256:	exiting successfully	(fork)
+PID 9255:	exiting successfully	(replaced with exec)
+PID 9255:	is a child process		(exec)
+PID 9255:	raising signal
+PID 9255:	exiting successfully	(exec)
