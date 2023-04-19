@@ -1,0 +1,20 @@
+dx=1e-9 n=2:
+result=3.141593;sec=1,usec=623874
+dx=1e-9 n=4:
+result=3.141593;sec=0,usec=853084
+dx=1e-9 n=8:
+result=3.141593;sec=0,usec=458950
+dx=1e-9 n=16:
+result=3.141593;sec=0,usec=365708
+dx=1e-9 n=32:
+result=3.141593;sec=0,usec=366495
+dx=1e-10 n=2:
+result=3.141592;sec=16,usec=217941
+dx=1e-10 n=4:
+result=3.141592;sec=8,usec=293363
+dx=1e-10 n=8:
+result=3.141592;sec=4,usec=441632
+dx=1e-10 n=16:
+result=3.141592;sec=3,usec=696458
+dx=1e-10 n=32:
+result=3.141592;sec=3,usec=809742
