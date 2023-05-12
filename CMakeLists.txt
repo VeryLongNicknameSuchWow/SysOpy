@@ -25,3 +25,11 @@ add_executable(cw06_zad2s BartczakMaciej/cw06/zad2/server.c)
 add_executable(cw06_zad2c BartczakMaciej/cw06/zad2/client.c)
 add_executable(cw07_zad1 BartczakMaciej/cw07/zad1/hair.c)
 add_executable(cw07_zad2 BartczakMaciej/cw07/zad2/hair.c)
+add_executable(cw08_zad1 BartczakMaciej/cw08/zad1/life.c BartczakMaciej/cw08/zad1/grid.c)
+find_library(NCURSESW_LIBRARY NAMES ncursesw)
+
+if (NOT NCURSESW_LIBRARY)
+    message(FATAL_ERROR "ncursesw library not found")
+endif ()
+
+target_link_libraries(cw08_zad1 ${NCURSESW_LIBRARY})
