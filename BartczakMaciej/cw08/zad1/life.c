@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include "grid.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -12,14 +11,14 @@ int main() {
     setlocale(LC_CTYPE, "");
     initscr(); // Start curses mode
 
-    char *foreground = create_grid();
-    char *background = create_grid();
+    char *foreground = createGrid();
+    char *background = createGrid();
     char *tmp;
 
-    init_grid(foreground);
+    initGrid(foreground);
 
     while (true) {
-        draw_grid(foreground);
+        drawGrid(foreground);
         usleep(500 * 1000);
 
         // Step simulation
@@ -30,8 +29,8 @@ int main() {
     }
 
     endwin(); // End curses mode
-    destroy_grid(foreground);
-    destroy_grid(background);
+    destroyGrid(foreground);
+    destroyGrid(background);
 
     return 0;
 }

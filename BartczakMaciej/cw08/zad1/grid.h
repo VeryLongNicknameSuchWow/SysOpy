@@ -2,14 +2,20 @@
 
 #include <stdbool.h>
 
-char *create_grid();
+typedef struct {
+    char *src;
+    char *dst;
+    int cellNo;
+} CellThreadArgs;
 
-void destroy_grid(char *grid);
+char *createGrid();
 
-void draw_grid(char *grid);
+void destroyGrid(char *grid);
 
-void init_grid(char *grid);
+void drawGrid(const char *grid);
 
-bool is_alive(int row, int col, char *grid);
+void initGrid(char *grid);
+
+bool isAlive(int row, int col, const char *grid);
 
 void update_grid(char *src, char *dst);
