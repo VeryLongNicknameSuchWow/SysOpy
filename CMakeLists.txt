@@ -26,6 +26,8 @@ add_executable(cw06_zad2c BartczakMaciej/cw06/zad2/client.c)
 add_executable(cw07_zad1 BartczakMaciej/cw07/zad1/hair.c)
 add_executable(cw07_zad2 BartczakMaciej/cw07/zad2/hair.c)
 add_executable(cw08_zad1 BartczakMaciej/cw08/zad1/life.c BartczakMaciej/cw08/zad1/grid.c)
+add_executable(cw09_zad1 BartczakMaciej/cw09/zad1/northpole.c)
+
 find_library(NCURSESW_LIBRARY NAMES ncursesw)
 
 if (NOT NCURSESW_LIBRARY)
