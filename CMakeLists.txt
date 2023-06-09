@@ -27,6 +27,10 @@ add_executable(cw07_zad1 BartczakMaciej/cw07/zad1/hair.c)
 add_executable(cw07_zad2 BartczakMaciej/cw07/zad2/hair.c)
 add_executable(cw08_zad1 BartczakMaciej/cw08/zad1/life.c BartczakMaciej/cw08/zad1/grid.c)
 add_executable(cw09_zad1 BartczakMaciej/cw09/zad1/northpole.c)
+add_executable(cw10_zad1c BartczakMaciej/cw10/zad1/client.c)
+add_executable(cw10_zad1s BartczakMaciej/cw10/zad1/server.c)
+add_executable(cw10_zad2c BartczakMaciej/cw10/zad2/client.c)
+add_executable(cw10_zad2s BartczakMaciej/cw10/zad2/server.c)
 
 find_library(NCURSESW_LIBRARY NAMES ncursesw)
 
