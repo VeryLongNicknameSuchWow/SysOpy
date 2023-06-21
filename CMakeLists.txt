@@ -31,6 +31,9 @@ add_executable(cw10_zad1c BartczakMaciej/cw10/zad1/client.c)
 add_executable(cw10_zad1s BartczakMaciej/cw10/zad1/server.c)
 add_executable(cw10_zad2c BartczakMaciej/cw10/zad2/client.c)
 add_executable(cw10_zad2s BartczakMaciej/cw10/zad2/server.c)
+add_executable(kol2_zad1 BartczakMaciej/kol2/zad1/solution/zad1.c)
+add_executable(kol2_zad2c BartczakMaciej/kol2/zad2/solution/cli.c)
+add_executable(kol2_zad2s BartczakMaciej/kol2/zad2/solution/srv.c)
 
 find_library(NCURSESW_LIBRARY NAMES ncursesw)
 
